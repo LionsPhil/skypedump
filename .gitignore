@@ -1,0 +1,12 @@
+# Don't track node modules or type annotations
+node_modules
+typings
+
+# Compiler output
+*.js
+
+# Dumped data
+out
+
+# IDE noise
+.vscode

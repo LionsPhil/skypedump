@@ -1,0 +1,7 @@
+{
+	"rules": {
+		"indent": [true, "tabs"],
+		"quotemark": [false],
+		"whitespace": [true, "check-separator"]
+	}
+}
