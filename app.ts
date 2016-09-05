@@ -1,4 +1,5 @@
 "use strict";
+// Copyright 2016 Philip Boulain. Licensed under the GNU GPL v2 or later.
 
 import * as cheerio from 'cheerio';
 import * as fs from 'fs';
