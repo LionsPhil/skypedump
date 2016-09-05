@@ -40,7 +40,14 @@ let db = new sqlite3.Database(filename, sqlite3.OPEN_READONLY, (err) => {
 					if(err !== null) { console.error(err); process.exit(1); }
 
 					// Format this message
-					let timestamp = (new Date(row.timestamp * 1000)).toISOString();
+					/* toISOString goes to millisecond resolution we don't have,
+					 * but without printf-style formatting for dates or numbers,
+					 * doing this manually with getUTCFullYear() and friends and
+					 * having to zero-pad them is ugly as sin. So, regexes. */
+					let timestamp = (new Date(row.timestamp * 1000))
+						.toISOString()
+						.replace(/T/, ' ')
+						.replace(/\.000Z$/, '');
 					// mixed DOS line endings, YEUCH
 					let body_xml = (row.body_xml === null)
 						? null
