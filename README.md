@@ -18,6 +18,8 @@ node app.js path_to_main.db
 If no path is provided, looks for `main.db` in the current directory.
 This database is opened read-only.
 
+On Windows, you can probably find your `main.db` under `%APPDATA%\Skype\(your skype username)\`.
+
 # Output
 Writes a heap of text files under an `out` subdirectory of the current working directory.
 These are overwritten without warning.
